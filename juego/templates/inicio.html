@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Página de inicio{% endblock %}
+
+{% block content %}
+    <h2>Bienvenido a la página de inicio</h2>
+    <!-- Aquí va el contenido específico de la página de inicio -->
+    <p>Esta es la página de inicio de la aplicación.</p>
+        <!-- Aquí va el login de usuario y una opcion para registrarse si no lo esta -->
+      
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" name="username" value="" id="username">
+            <br>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" value="" id="password">
+            <br>
+            <input type="submit" value="Iniciar sesión">
+        </form>
+        <a href="{% url 'registro' %}">Registrarse</a>
+        <br>
+{% endblock %}

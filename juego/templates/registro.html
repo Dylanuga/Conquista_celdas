@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Página de registro{% endblock %}
+
+{% block content %}
+    <h2>Registro</h2>
+    <!-- Aquí va el formulario de registro -->
+
+    <form action="{% url 'registro' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Registrarse">
+    </form>
+{% endblock %}
